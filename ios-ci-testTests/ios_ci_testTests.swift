@@ -9,6 +9,12 @@
 import XCTest
 @testable import ios_ci_test
 
+extension Bool {
+    static func random() -> Bool {
+        return arc4random_uniform(2) == 0
+    }
+}
+
 class ios_ci_testTests: XCTestCase {
     
     override func setUp() {
@@ -24,6 +30,7 @@ class ios_ci_testTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertTrue(Bool.random())
     }
     
     func testPerformanceExample() {

@@ -1,0 +1,9 @@
+stages:
+  - test
+
+test_project:
+  stage: test
+  script:
+    - xcode test -project ios-ci-test.xcodeproj -scheme ios-ci-test -destination 'platform=iOS Simulator, name=iPhone 6s' | xcpretty -s
+  tags:
+    - ios
